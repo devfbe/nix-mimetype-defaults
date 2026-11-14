@@ -6,6 +6,8 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/devfbe/nix-mimetype-defaults/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/devfbe/nix-mimetype-defaults/actions/workflows/ci.yml/badge.svg?branch=main"></a>
+  <a href="https://github.com/devfbe/nix-mimetype-defaults/releases"><img alt="Latest release" src="https://img.shields.io/github/v/tag/devfbe/nix-mimetype-defaults?label=release&sort=semver"></a>
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-blue"></a>
   <img alt="NixOS module" src="https://img.shields.io/badge/NixOS-module-5277C3?logo=nixos&logoColor=white">
   <img alt="Flakes and non-flakes" src="https://img.shields.io/badge/flakes-%E2%9C%93-informational">
@@ -97,6 +99,10 @@ Add the flake input and the module, then name your applications:
   };
 }
 ```
+
+`main` is kept working; to stay on a released version instead, pin a tag:
+`url = "github:devfbe/nix-mimetype-defaults/v0.1.0";`
+([releases](https://github.com/devfbe/nix-mimetype-defaults/releases)).
 
 An application is named by its **desktop file**: the file in
 `share/applications/` of its package, with or without the `.desktop`
@@ -297,6 +303,10 @@ $ nix flake check
 The checks verify, among other things, that every built-in MIME type is a
 canonical shared-mime-info name, that no type sits in two classes, and
 that this README lists every class.
+
+CI runs the checks on every push and pull request, against the locked
+nixpkgs and against current `nixos-unstable`. Pushing a tag `v*` creates
+a GitHub release after the checks passed.
 
 Missing a format or a class? Issues and pull requests are welcome.
 
