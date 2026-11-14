@@ -17,7 +17,7 @@
 ---
 
 Windows and macOS ask one question per role. A Linux desktop wants one
-`mimeapps.list` line per MIME type — a dozen for an image viewer, seventy
+`mimeapps.list` line per MIME type — a dozen for an image viewer, seventy-five
 for a text editor. This module carries those lists for you.
 
 <table>
@@ -39,7 +39,7 @@ xdg.mime.defaultApplications = {
   "image/tiff" = "imv.desktop";
   "image/svg+xml" = "imv.desktop";
   "application/pdf" = "org.pwmt.zathura.desktop";
-  # ... and 73 more for the text editor
+  # ... and 75 more for the text editor
 };
 ```
 
@@ -139,17 +139,17 @@ untouched.
 | ✉️ | `mailClient` | mailto: links and saved e-mails | 2 | `thunderbird` |
 | 📅 | `calendar` | Calendar files and webcal: links | 3 | `org.gnome.Calendar`, `org.kde.korganizer` |
 | 📁 | `fileManager` | Directories | 1 | `pcmanfm-qt`, `org.kde.dolphin`, `org.gnome.Nautilus` |
-| 📝 | `textEditor` | Plain text, markup, configuration formats and source code | 73 | `code`, `nvim`, `org.kde.kate` |
+| 📝 | `textEditor` | Plain text, markup, configuration formats and source code | 75 | `code`, `nvim`, `org.kde.kate` |
 | 📕 | `pdfViewer` | PDF documents | 1 | `org.pwmt.zathura`, `org.gnome.Evince`, `org.kde.okular` |
 | 📄 | `documentViewer` | Paginated documents other than PDF: PostScript, DjVu, DVI, XPS | 12 | `org.gnome.Evince`, `org.kde.okular` |
 | 📚 | `ebookReader` | E-books: EPUB, Mobipocket/Kindle, FictionBook | 5 | `com.github.johnfactotum.Foliate` |
 | 💬 | `comicReader` | Comic book archives (CBZ, CBR) | 2 | `mcomix` |
 | 🖼️ | `imageViewer` | Everyday image formats nearly every viewer opens | 11 | `imv`, `org.gnome.Loupe`, `org.kde.gwenview` |
-| 🗃️ | `rareImageViewer` | Less common raster formats that need a broad-format tool | 22 | `gimp`, `org.kde.gwenview` |
+| 🗃️ | `rareImageViewer` | Less common raster formats that need a broad-format tool | 23 | `gimp`, `org.kde.gwenview` |
 | 📷 | `rawImageViewer` | Camera raw files | 20 | `org.darktable.darktable` |
 | 🎨 | `imageEditor` | Layered project files: XCF, PSD, OpenRaster, Krita | 5 | `gimp`, `org.kde.krita` |
-| 🎬 | `videoPlayer` | Video files | 20 | `mpv`, `vlc` |
-| 🎵 | `audioPlayer` | Audio files and playlists | 28 | `mpv`, `audacious`, `org.gnome.Rhythmbox3` |
+| 🎬 | `videoPlayer` | Video files | 22 | `mpv`, `vlc` |
+| 🎵 | `audioPlayer` | Audio files and playlists | 29 | `mpv`, `audacious`, `org.gnome.Rhythmbox3` |
 | 📦 | `archiveManager` | Archives and compressed files | 24 | `org.gnome.FileRoller`, `org.kde.ark` |
 | 📃 | `wordProcessor` | Text documents: ODT, DOCX, DOC, RTF | 8 | `writer` (LibreOffice) |
 | 📊 | `spreadsheet` | Spreadsheets: ODS, XLSX, XLS, CSV | 8 | `calc` (LibreOffice) |

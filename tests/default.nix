@@ -194,7 +194,9 @@ in
   };
 
   # Every built-in MIME type is known to shared-mime-info, and an alias is
-  # only listed together with its canonical name.
+  # only listed together with its canonical name. `newerNames` are the
+  # canonical names of a later shared-mime-info release, which an older
+  # one does not know yet; their old names are listed next to them.
   classes-known =
     pkgs.runCommand "test-classes-known"
       {
@@ -206,6 +208,14 @@ in
           )
         );
         mime = "${pkgs.shared-mime-info}/share/mime";
+        newerNames = [
+          "audio/matroska"
+          "video/matroska"
+          "video/matroska-3d"
+          "image/vnd.ms-dds"
+          "text/vnd.typst"
+          "text/x-shellscript"
+        ];
       }
       ''
         failed=
@@ -214,6 +224,7 @@ in
           grep -Fxq -- "$type" $mime/types && continue
           canonical=$(awk -v t="$type" '$1 == t { print $2 }' $mime/aliases)
           if [ -z "$canonical" ]; then
+            case " $newerNames " in *" $type "*) continue ;; esac
             echo "$class: $type is unknown to shared-mime-info"; failed=1
           elif ! grep -Fxq -- "$class"$'\t'"$canonical" $types; then
             echo "$class: $type is an alias of $canonical, which is missing"; failed=1

@@ -4,9 +4,9 @@
 # Rules for this file (enforced by the flake checks):
 #   - Names are the canonical shared-mime-info names. A desktop looks up
 #     the *canonical* type in mimeapps.list, so an entry under an alias
-#     alone never matches. An alias may be listed next to its canonical
-#     name where the canonical name changed between shared-mime-info
-#     releases.
+#     alone never matches. Where the canonical name changed between
+#     shared-mime-info releases, both names are listed so the class works
+#     on either side of the rename.
 #   - No MIME type appears in two classes.
 #   - A class only lists formats that typical applications of that role
 #     can really open: pointing a type at a program that fails on it is
@@ -55,6 +55,7 @@
       "text/x-tex"
       "text/x-bibtex"
       "text/x-typst"
+      "text/vnd.typst" # canonical name in newer shared-mime-info
       "text/x-readme"
       "text/x-log"
       "text/x-patch"
@@ -82,6 +83,7 @@
       "application/javascript" # alias, canonical before shared-mime-info 2.4
       # Scripts and build files
       "application/x-shellscript"
+      "text/x-shellscript" # canonical name in newer shared-mime-info
       "application/x-perl"
       "application/x-php"
       "application/x-ruby"
@@ -198,6 +200,7 @@
       "image/x-tga"
       "image/vnd.zbrush.pcx"
       "image/x-dds"
+      "image/vnd.ms-dds" # canonical name in newer shared-mime-info
       "image/x-exr"
       "image/x-sgi"
       "image/x-sun-raster"
@@ -257,7 +260,9 @@
     mimeTypes = [
       "video/mp4"
       "video/x-matroska"
+      "video/matroska" # canonical name in newer shared-mime-info
       "video/x-matroska-3d"
+      "video/matroska-3d" # canonical name in newer shared-mime-info
       "video/webm"
       "video/quicktime"
       "video/vnd.avi"
@@ -296,6 +301,7 @@
       "audio/x-aiff"
       "audio/x-ms-wma"
       "audio/x-matroska"
+      "audio/matroska" # canonical name in newer shared-mime-info
       "audio/webm"
       "audio/x-ape"
       "audio/x-wavpack"
